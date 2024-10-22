@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body>
+    <header th:replace="fragments :: nav"></header>
+    <div class="container">
+        <h1>Bienvenido a Dawfily</h1>
+        <p>Explora, comenta y puntúa tus álbumes favoritos.</p>
+        <p>© <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span></p>
+    </div>
+</body>
+</html>
