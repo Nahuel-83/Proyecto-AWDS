@@ -1,7 +1,9 @@
 package bbbt04e01.bbbt04e01.service;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface CalculosService {
 
     public boolean esPrimo(int numero);
