@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import bbbt04e01.bbbt04e01.service.CalculosService;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -19,7 +18,7 @@ public class CalculosController {
     @Autowired
     CalculosService calculosService;
 
-    @GetMapping("/primo")
+    @PostMapping("/primo")
     public String esPrimo(@RequestParam(required = false) Integer numero, Model model) {
         if (numero == null) {
             model.addAttribute("error", "Debes proporcionar un número.");
