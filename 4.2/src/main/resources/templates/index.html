@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Cálculos Matemáticos</title>
+  </head>
+  <body>
+    <h1>Cálculos Matemáticos</h1>
+
+    <div th:if="${error}">
+      <span style="color: red" th:text="${error}"></span>
+    </div>
+
+    <h2>¿Es primo?</h2>
+    <form action="/calculos/primo" method="post">
+      <label for="numero">Número:</label>
+      <input type="number" id="numero" name="numero" min="1" />
+      <button type="submit">Comprobar</button>
+    </form>
+    <span
+      th:if="${numero != null}"
+      th:text="'El número ' + ${numero} + ' ' + (${esPrimo} ? 'es primo' : 'no es primo')"
+    ></span>
+
+    <h2>Calcular Hipotenusa</h2>
+    <form action="/calculos/hipotenusa" method="post">
+      <label for="cateto1">Cateto 1:</label>
+      <input type="number" id="cateto1" name="cateto1" required />
+      <label for="cateto2">Cateto 2:</label>
+      <input type="number" id="cateto2" name="cateto2" required />
+      <button type="submit">Calcular</button>
+    </form>
+    <span
+      th:if="${hipotenusa != null}"
+      th:text="'La hipotenusa de los catetos ' + ${cateto1} + ' y ' + ${cateto2} + ' es ' + ${hipotenusa}"
+    ></span>
+
+    <h2>Divisores de un número</h2>
+    <form action="/calculos/divisores" method="post">
+      <label for="numero">Número:</label>
+      <input type="number" id="numeroDivisores" name="numero" required />
+      <button type="submit">Obtener divisores</button>
+    </form>
+    <span
+      th:if="${divisores != null}"
+      th:text="'Los divisores de ' + ${numero} + ' son: ' + ${divisores}"
+    ></span>
+  </body>
+</html>

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head"></head>
-<body>
-    <header th:replace="fragments :: nav"></header>
-    <div class="container">
-        <h1>Bienvenido a Dawfily</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dawlify - Catálogo de Música</title>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body style="font-family: 'Questrial', sans-serif;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/quienes-somos">Quiénes Somos</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h1>Bienvenido a Dawlify</h1>
         <p>Explora, comenta y puntúa tus álbumes favoritos.</p>
-        <p>© <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span></p>
+        <p>© <span>2024</span></p>
     </div>
 </body>
 </html>
