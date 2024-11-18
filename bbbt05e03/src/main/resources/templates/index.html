@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elige tu película favorita</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <style>
+        td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+        .movie-img {
+            width: 150px;
+            height: 225px;
+        }
+        .vote-row {
+            margin-top: 10px;
+        }
+        .email-input {
+            margin-top: 15px;
+            width: 100%;
+        }
+        .submit-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Elige tu película favorita</h1>
+
+<form method="POST" th:action="@{/pelicula/voto}" th:object="${formInfo}">
+    <table>
+        <tr>
+            <td>
+                <label>
+                    <img th:src="@{/Spider-Man1.png}" alt="Spiderman1" class="movie-img" />
+                </label>
+            </td>
+            <td>
+                <label>
+                    <img th:src="@{/Spider_Man_2.png}" alt="Spiderman2" class="movie-img" />
+                </label>
+            </td>
+            <td>
+                <label>
+                    <img th:src="@{/Spider_Man_3.png}" alt="Spiderman3" class="movie-img" />
+                </label>
+            </td>
+        </tr>
+        <tr class="vote-row">
+            <td>
+                <i class="bi bi-heart"></i> <span th:text="${votoSPM1}">0</span>
+            </td>
+            <td>
+                <i class="bi bi-heart"></i> <span th:text="${votoSPM2}">0</span>
+            </td>
+            <td>
+                <i class="bi bi-heart"></i> <span th:text="${votoSPM3}">0</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="pelicula" value="1" required /> 
+            </td>
+            <td>
+                <input type="radio" name="pelicula" value="2" required /> 
+            </td>
+            <td>
+                <input type="radio" name="pelicula" value="3" required /> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">Email:</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="email" name="email" class="email-input form-control" required />
+            </td>
+        </tr>
+    </table>
+
+    <button type="submit" class="submit-btn btn btn-primary">Votar</button>
+
+    <div th:if="${error}">
+        <p style="color: red;" th:text="${error}"></p>
+    </div>
+</form>
+</body>
+</html>
