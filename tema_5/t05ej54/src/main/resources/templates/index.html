@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Info de Países</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <label for="pais">Info de países</label>
+            <select id="pais" name="nombre" onchange="this.form.submit()">
+                <option value="">Seleccione un país</option>
+                <option th:each="pais : ${paises}" th:value="${pais.nombre}" th:text="${pais.nombre}"></option>
+            </select>
+        </form>
+        <div th:if="${paisSeleccionado != null}">
+            <h2>Capital: <span th:text="${paisSeleccionado.capital}"></span></h2>
+            <h3>Población: <span th:text="${paisSeleccionado.poblacion}"></span></h3>
+        </div>
+        <div th:if="${error != null}">
+            <p th:text="${error}" style="color: red;"></p>
+        </div>
+    </div>
+</body>
+</html>
