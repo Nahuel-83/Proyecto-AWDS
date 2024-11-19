@@ -1,13 +1,13 @@
-package com.t03.e02;
+package com.e01.e01;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class E02Application {
+public class E01Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(E02Application.class, args);
+		SpringApplication.run(E01Application.class, args);
 	}
 
 }
