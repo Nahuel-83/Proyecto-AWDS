@@ -61,10 +61,6 @@ public class MasterMindService {
             errorMessage = "Error: El juego ya ha terminado. Por favor, inicia un nuevo juego.";
             return false;
         }
-        if (intento.length() != masterMind.getTamNumero()) {
-            errorMessage = "Error: La longitud del número debe ser de " + masterMind.getTamNumero() + " dígitos.";
-            return false;
-        }
 
         int bienColocados = 0, malColocados = 0;
         String numeroSecreto = masterMind.getNumeroSecreto();
